@@ -64,4 +64,5 @@ async def my_configs(update: Update, context: ContextTypes.DEFAULT_TYPE):
             msg = "چیزی یافت نشد"
         await update.message.reply_text(msg, parse_mode="MarkdownV2", reply_markup=reply_markup)
     else:
-        await update.message.reply_text("You're not registered.")
+        from .common import start
+        await start(update, context)
